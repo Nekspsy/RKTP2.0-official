@@ -1,0 +1,23 @@
+{
+  "name": "RKTP2.0",
+  "version": "1.0.0",
+  "description": "@nekspsy",
+  "main": "rktp.js",
+  "scripts": {
+    "start": "node rktp.js"
+  },
+  "engines": {
+    "node": "8.11.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.30.0",
+    "nodemon": "^1.18.7",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "socks5-https-client": "^1.2.1"
+  }
+}
