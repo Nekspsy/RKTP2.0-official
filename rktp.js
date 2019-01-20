@@ -18,11 +18,10 @@ bot.onText(/\/cv (.+)/, (msg, match)  => {
 					const data = JSON.parse(body);
 					var usdrub = (data.Valute.USD.Value).toFixed(2);
 
-					request('https://matcher.wavesplatform.com/matcher/orderbook/8LjKWGxXsiLpMziWanFn117e97gNXShD1zwSLCGpSPfb/WAVES', function (error, response, body) {
+					request('https://marketdata.wavesplatform.com/api/trades/8LjKWGxXsiLpMziWanFn117e97gNXShD1zwSLCGpSPfb/WAVES/5', function (error, response, body) {
 						const data = JSON.parse(body);
-						var lastbidusd = ((data.bids[0].price / 100000000).toFixed(8)) * wavesusd;
-						var lastaskusd = ((data.asks[0].price / 100000000).toFixed(8)) * wavesusd;
-						var rktusd = ((lastbidusd + lastaskusd) / 2).toFixed(2);
+						var averagePrice = data.map(i => parseFloat(i['price'])).reduce((a, b) => a + b) / data.length;
+						var rktusd = (averagePrice * wavesusd).toFixed(2);
 						var rktrub = (rktusd * usdrub).toFixed(2);
 						var rkt2usd = (resp * rktusd).toFixed(2);
 						var rkt2rub = ((resp * rktusd) * usdrub).toFixed(2);
