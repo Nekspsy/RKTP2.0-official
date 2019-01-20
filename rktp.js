@@ -67,7 +67,7 @@ bot.on('text', function (msg) {
 					var rktusd = (averagePrice * wavesusd).toFixed(2);
 	
 					let md = `
-								🚀  RKT8  /  WAVES  🌊
+								🚀  RKT8  /  WAVES  🔹
 			
 								Покупка: ${lastbid}
 								Продажа: ${lastask}
@@ -89,7 +89,7 @@ bot.on('text', function (msg) {
 			var lastask = (data.asks[0].price)/100;
 
 			let md = `
-				🌊  WAVES  /  USD  💲
+				🔹  WAVES  /  USD  💲
 	
 				Покупка: ${lastbid}
 				Продажа: ${lastask}
