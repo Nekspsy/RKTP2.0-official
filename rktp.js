@@ -27,14 +27,14 @@ bot.onText(/\/cv (.+)/, (msg, match)  => {
 						var rkt2rub = ((resp * rktusd) * usdrub).toFixed(2);
 						
 						let md = `
-						🚀 RKT8  ➡️  USD/RUB 💵
-	
-						1 $ = ${usdrub} ₽
-						1 RKT8 = ${rktusd} $ / ${rktrub} ₽
+							🚀 RKT8  ➡️  USD/RUB 💵
 
-						${resp} RKT8 = ${rkt2usd} $
-						${resp} RKT8 = ${rkt2rub} ₽
-					`;
+							1 $ = ${usdrub} ₽
+							1 RKT8 = ${rktusd} $ / ${rktrub} ₽
+
+							${resp} RKT8 = ${rkt2usd} $
+							${resp} RKT8 = ${rkt2rub} ₽
+						`;
 	
 						bot.sendMessage(messageChatId, md);
 						bot.sendMessage(logChatId, 'Пользователь ' + msg.from.first_name + ' (@' + msg.from.username + ') выполнил команду: ' + msg.text );
@@ -67,11 +67,11 @@ bot.on('text', function (msg) {
 					var rktusd = (averagePrice * wavesusd).toFixed(2);
 	
 					let md = `
-								🚀  RKT8  /  WAVES  🔹
-			
-								Покупка: ${lastbid}
-								Продажа: ${lastask}
-								Цена в usd: ${rktusd}
+						🚀  RKT8  /  WAVES  🔹
+
+						Покупка: ${lastbid}
+						Продажа: ${lastask}
+						Цена в usd: ${rktusd}
 							`;
 					bot.sendMessage(messageChatId, md);
 					bot.sendMessage(logChatId, 'Пользователь ' + msg.from.first_name + ' (@' + msg.from.username + ') выполнил команду: ' + msg.text );
@@ -90,7 +90,7 @@ bot.on('text', function (msg) {
 
 			let md = `
 				🔹  WAVES  /  USD  💲
-	
+
 				Покупка: ${lastbid}
 				Продажа: ${lastask}
 			`;
